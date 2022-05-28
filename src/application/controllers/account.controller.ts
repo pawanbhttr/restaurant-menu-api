@@ -1,5 +1,5 @@
 import { Controller, HttpCode, Post, Body, UnauthorizedException } from "@nestjs/common";
-import { ApiTags } from "@nestjs/swagger";
+import { ApiBearerAuth, ApiTags } from "@nestjs/swagger";
 import { LoginDto } from "src/core/common/dtos/login.dto";
 import { AccountService } from "src/infrastructure/services/account.service";
 import { UseGuards } from "@nestjs/common";
@@ -8,6 +8,7 @@ import { UserService } from "src/core/services/user.service";
 import { JwtAuthGuard } from "src/infrastructure/common/guards/auth.guard";
 import { CreateUserDto } from "src/core/common/dtos/create-user.dto";
 
+@ApiBearerAuth()
 @ApiTags("Account")
 @Controller("api")
 export class AccountController {

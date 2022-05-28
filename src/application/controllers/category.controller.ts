@@ -2,9 +2,10 @@ import { Controller, Get, Post, Put, Delete, Body, Param, UseGuards } from '@nes
 import { Category } from 'src/core/entities/category.entity';
 import { CategoryService } from 'src/core/services/category.service';
 import { CategoryDto } from 'src/core/common/dtos/category.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/infrastructure/common/guards/auth.guard';
 
+@ApiBearerAuth()
 @ApiTags("Category")
 @Controller('api/categories')
 @UseGuards(JwtAuthGuard)

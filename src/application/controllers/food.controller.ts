@@ -2,9 +2,10 @@ import { Controller, Get, Post, Delete, Put, Body, Param, HttpCode, UseGuards } 
 import { FoodService } from 'src/core/services/food.service';
 import { Food } from 'src/core/entities/food.entity';
 import { FoodDto } from 'src/core/common/dtos/food.dto';
-import { ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/infrastructure/common/guards/auth.guard';
 
+@ApiBearerAuth()
 @ApiTags("Food")
 @Controller('api/foods')
 @UseGuards(JwtAuthGuard)
