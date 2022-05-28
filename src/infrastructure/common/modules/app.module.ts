@@ -1,5 +1,6 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
+import { AccountModule } from './account.module';
 import { CategoryModule } from './category.module';
 import { FoodModule } from './food.module';
 
@@ -9,7 +10,8 @@ import { FoodModule } from './food.module';
             dbName: "restaurant"
         }),
         FoodModule,
-        CategoryModule
+        CategoryModule,
+        AccountModule
     ]
 })
 export class AppModule {}

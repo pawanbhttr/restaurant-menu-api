@@ -6,6 +6,8 @@ export class FoodDto {
     @ApiProperty()
     public categoryId: string;
     @ApiProperty()
+    public price: number;
+    @ApiProperty()
     public description: string;
     @ApiProperty()
     public imageUrl: string;

@@ -1,8 +1,8 @@
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
-import { Category, CategoryDocument } from '../entity/category.entity';
-import { CategoryDto } from '../common/dto/category.dto';
+import { Category, CategoryDocument } from '../entities/category.entity';
+import { CategoryDto } from '../common/dtos/category.dto';
 
 @Injectable()
 export class CategoryService {

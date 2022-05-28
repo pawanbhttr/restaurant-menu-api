@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { FoodController } from 'src/application/controllers/food.controller';
-import { Food, FoodSchema } from 'src/core/entity/food.entity';
+import { Food, FoodSchema } from 'src/core/entities/food.entity';
 import { FoodService } from 'src/core/services/food.service';
 
 @Module({

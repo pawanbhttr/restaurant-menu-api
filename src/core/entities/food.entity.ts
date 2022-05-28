@@ -10,6 +10,8 @@ export class Food {
     @Prop()
     public categoryId: string;
     @Prop()
+    public price: number;
+    @Prop()
     public description: string;
     @Prop()
     public imageUrl: string;

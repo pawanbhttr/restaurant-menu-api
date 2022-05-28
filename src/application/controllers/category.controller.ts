@@ -1,7 +1,7 @@
 import { Controller, Get, Post, Put, Delete, Body, Param } from '@nestjs/common';
-import { Category } from 'src/core/entity/category.entity';
+import { Category } from 'src/core/entities/category.entity';
 import { CategoryService } from 'src/core/services/category.service';
-import { CategoryDto } from 'src/core/common/dto/category.dto';
+import { CategoryDto } from 'src/core/common/dtos/category.dto';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags("Category")
