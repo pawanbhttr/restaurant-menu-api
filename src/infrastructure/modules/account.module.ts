@@ -4,9 +4,9 @@ import { AccountController } from 'src/application/controllers/account.controlle
 import { User, UserSchema } from 'src/core/entities/user.entity';
 import { UserService } from 'src/core/services/user.service';
 import { AccountService } from 'src/infrastructure/services/account.service';
-import { jwtConstants } from '../constants/app.constant';
-import { JwtStrategy } from '../strategies/jwt.strategy';
-import { LocalStrategy } from '../strategies/local.strategy';
+import { jwtConstants } from '../common/constants/app.constant';
+import { JwtStrategy } from '../common/strategies/jwt.strategy';
+import { LocalStrategy } from '../common/strategies/local.strategy';
 import { JwtModule } from '@nestjs/jwt';
 import { PassportModule } from '@nestjs/passport';
 

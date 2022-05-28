@@ -10,7 +10,7 @@ export class UserService {
 
     async create(model: CreateUserDto): Promise<any> {
       const createdUser = await this.userModel.create(model);
-      const {password, ...result} = createdUser;
-      return result;
+      const {_id} = createdUser;
+      return _id;
     }
 }
