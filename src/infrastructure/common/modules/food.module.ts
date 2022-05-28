@@ -5,7 +5,9 @@ import { Food, FoodSchema } from 'src/core/entities/food.entity';
 import { FoodService } from 'src/core/services/food.service';
 
 @Module({
-    imports:[MongooseModule.forFeature([{name: Food.name, schema: FoodSchema}])],
+    imports:[
+        MongooseModule.forFeature([{name: Food.name, schema: FoodSchema}])
+    ],
     controllers: [FoodController],
     providers: [FoodService],  
 })

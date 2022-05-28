@@ -4,6 +4,7 @@ import { AccountModule } from './account.module';
 import { CategoryModule } from './category.module';
 import { FoodModule } from './food.module';
 
+
 @Module({
     imports:[
         MongooseModule.forRoot("mongodb+srv://admin:admin@cluster0.fw7txj5.mongodb.net/?retryWrites=true&w=majority",{
@@ -12,6 +13,7 @@ import { FoodModule } from './food.module';
         FoodModule,
         CategoryModule,
         AccountModule
-    ]
+    ],
+    providers:[]
 })
 export class AppModule {}

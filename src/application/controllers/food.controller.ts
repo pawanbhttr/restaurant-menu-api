@@ -1,22 +1,24 @@
-import { Controller, Get, Post, Delete, Put, Body, Param, HttpCode } from '@nestjs/common';
+import { Controller, Get, Post, Delete, Put, Body, Param, HttpCode, UseGuards } from '@nestjs/common';
 import { FoodService } from 'src/core/services/food.service';
 import { Food } from 'src/core/entities/food.entity';
 import { FoodDto } from 'src/core/common/dtos/food.dto';
 import { ApiTags } from '@nestjs/swagger';
+import { JwtAuthGuard } from 'src/infrastructure/common/guards/auth.guard';
 
 @ApiTags("Food")
 @Controller('api/foods')
+@UseGuards(JwtAuthGuard)
 export class FoodController {
     constructor(private readonly foodService: FoodService) { }
 
     @Post()
     async create(@Body() model: FoodDto) {
-      await this.foodService.create(model);
+      return await this.foodService.create(model);
     }
 
     @Put(':id')
     async update(@Param('id') id: string, @Body() model: FoodDto) {
-        await this.foodService.update(id,model);
+        return await this.foodService.update(id,model);
     }
   
     @Get()
