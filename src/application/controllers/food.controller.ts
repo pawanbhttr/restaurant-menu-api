@@ -8,7 +8,7 @@ import { JwtAuthGuard } from 'src/infrastructure/common/guards/auth.guard';
 @ApiBearerAuth()
 @ApiTags("Food")
 @Controller('api/foods')
-// @UseGuards(JwtAuthGuard)
+@UseGuards(JwtAuthGuard)
 export class FoodController {
     constructor(private readonly foodService: FoodService) { }
 
