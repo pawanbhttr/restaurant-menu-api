@@ -3,6 +3,7 @@ import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/infrastructure/common/guards/auth.guard';
 import { OrderService } from 'src/core/services/order.service';
 import { OrderDto, OrderListDto } from 'src/core/common/dtos/order.dto';
+import { OrderListDetailDto } from '../../core/common/dtos/order.dto';
 
 @ApiBearerAuth()
 @ApiTags("Orders")
@@ -17,8 +18,8 @@ export class OrderController {
     }
   
     @Get()
-    @ApiResponse({ type: OrderListDto, isArray: true })
-    async findAll(): Promise<OrderListDto[]> {
+    @ApiResponse({ type: OrderListDetailDto, isArray: true })
+    async findAll(): Promise<OrderListDetailDto[]> {
         return this.orderService.getOrders();
     }
 }

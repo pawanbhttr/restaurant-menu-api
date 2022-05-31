@@ -11,11 +11,17 @@ export class OrderDto {
     @ApiProperty()
     public orderDate: Date;
     public orderNo: number;
-    @ApiProperty({ type: OrderDetailDto,isArray:true })
+    @ApiProperty({ type: OrderDetailDto, isArray: true })
     public orderDetail: OrderDetailDto[];
 }
 
 export class OrderListDetailDto {
+    @ApiProperty()
+    public orderDate: Date;
+    @ApiProperty()
+    public orderNo: number;
+    @ApiProperty()
+    public billAmount: number;
     @ApiProperty()
     public foodId: string;
     @ApiProperty()
@@ -28,15 +34,15 @@ export class OrderListDetailDto {
     public amount: number;
 }
 
-export class OrderListDto {
-    @ApiProperty()
-    public orderDate: Date;
-    @ApiProperty()
-    public orderNo: number;
-    @ApiProperty()
-    public billAmount: number;
-    @ApiProperty({ type: OrderListDetailDto, isArray: true })
-    public orderDetail: OrderListDetailDto[];
-   
-}
+// export class OrderListDto {
+//     @ApiProperty()
+//     public orderDate: Date;
+//     @ApiProperty()
+//     public orderNo: number;
+//     @ApiProperty()
+//     public billAmount: number;
+//     @ApiProperty({ type: OrderListDetailDto, isArray: true })
+//     public orderDetail: OrderListDetailDto[];
+
+// }
 
