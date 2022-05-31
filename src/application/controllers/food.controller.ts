@@ -2,13 +2,13 @@ import { Controller, Get, Post, Delete, Put, Body, Param, HttpCode, UseGuards } 
 import { FoodService } from 'src/core/services/food.service';
 import { Food } from 'src/core/entities/food.entity';
 import { FoodDto } from 'src/core/common/dtos/food.dto';
-import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
+import { ApiBearerAuth, ApiResponse, ApiTags } from '@nestjs/swagger';
 import { JwtAuthGuard } from 'src/infrastructure/common/guards/auth.guard';
 
 @ApiBearerAuth()
 @ApiTags("Food")
 @Controller('api/foods')
-@UseGuards(JwtAuthGuard)
+// @UseGuards(JwtAuthGuard)
 export class FoodController {
     constructor(private readonly foodService: FoodService) { }
 
@@ -23,12 +23,14 @@ export class FoodController {
     }
   
     @Get()
-    async findAll(): Promise<Food[]> {
+    @ApiResponse({type: FoodDto, isArray: true})
+    async findAll(): Promise<FoodDto[]> {
         return this.foodService.findAll();
     }
   
     @Get(':id')
-    async findOne(@Param('id') id: string): Promise<Food> {
+    @ApiResponse({type: FoodDto})
+    async findOne(@Param('id') id: string): Promise<FoodDto> {
       return this.foodService.findById(id);
     }
   

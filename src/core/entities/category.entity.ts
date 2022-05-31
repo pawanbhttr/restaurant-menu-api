@@ -6,7 +6,7 @@ export type CategoryDocument = Category & Document;
 @Schema()
 export class Category {
     @Prop()
-    private name: string;
+    public name: string;
 }
 
 export const CategorySchema = SchemaFactory.createForClass(Category);

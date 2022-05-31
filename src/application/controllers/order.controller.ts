@@ -7,7 +7,7 @@ import { OrderDto, OrderListDto } from 'src/core/common/dtos/order.dto';
 @ApiBearerAuth()
 @ApiTags("Orders")
 @Controller('api/orders')
-@UseGuards(JwtAuthGuard)
+// @UseGuards(JwtAuthGuard)
 export class OrderController {
     constructor(private readonly orderService: OrderService) { }
 

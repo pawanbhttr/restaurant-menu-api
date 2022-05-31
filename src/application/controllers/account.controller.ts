@@ -8,7 +8,6 @@ import { UserService } from "src/core/services/user.service";
 import { JwtAuthGuard } from "src/infrastructure/common/guards/auth.guard";
 import { CreateUserDto } from "src/core/common/dtos/create-user.dto";
 
-@ApiBearerAuth()
 @ApiTags("Account")
 @Controller("api")
 export class AccountController {
@@ -23,7 +22,6 @@ export class AccountController {
     }
 
     @Post("signup")
-    @UseGuards(JwtAuthGuard)
     async create(@Body() model: CreateUserDto) {
         return await this.userService.create(model)
     }
