@@ -15,28 +15,7 @@ export class OrderDto {
     public orderDetail: OrderDetailDto[];
 }
 
-// export class OrderListDetailDto {
-//     @ApiProperty()
-//     public foodId: string;
-//     @ApiProperty()
-//     public foodName: string;
-//     @ApiProperty()
-//     public quantity: number;
-//     @ApiProperty()
-//     public rate: number;
-//     @ApiProperty()
-//     public amount: number;
-// }
-
-export class OrderListDto {
-    @ApiProperty()
-    public orderDate: Date;
-    @ApiProperty()
-    public orderNo: number;
-    @ApiProperty()
-    public billAmount: number;
-    // @ApiProperty({ type: OrderListDetailDto, isArray: true })
-    // public orderDetail: OrderListDetailDto[];
+export class OrderListDetailDto {
     @ApiProperty()
     public foodId: string;
     @ApiProperty()
@@ -47,5 +26,17 @@ export class OrderListDto {
     public rate: number;
     @ApiProperty()
     public amount: number;
+}
+
+export class OrderListDto {
+    @ApiProperty()
+    public orderDate: Date;
+    @ApiProperty()
+    public orderNo: number;
+    @ApiProperty()
+    public billAmount: number;
+    @ApiProperty({ type: OrderListDetailDto, isArray: true })
+    public orderDetail: OrderListDetailDto[];
+   
 }
 
