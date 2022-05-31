@@ -12,6 +12,8 @@ export class Food {
     @Prop()
     public price: number;
     @Prop()
+    public calories: number;
+    @Prop()
     public description: string;
     @Prop()
     public imageUrl: string;

@@ -15,7 +15,7 @@ import { PassportModule } from '@nestjs/passport';
         MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
         JwtModule.register({
             secret: jwtConstants.secret,
-            signOptions: { expiresIn: '1h' },
+            signOptions: { expiresIn: '24h' },
         }),
         PassportModule,
     ],

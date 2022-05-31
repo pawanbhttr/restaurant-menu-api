@@ -8,6 +8,8 @@ export class FoodDto {
     @ApiProperty()
     public price: number;
     @ApiProperty()
+    public calories: number;
+    @ApiProperty()
     public description: string;
     @ApiProperty()
     public imageUrl: string;

@@ -3,6 +3,7 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AccountModule } from './account.module';
 import { CategoryModule } from './category.module';
 import { FoodModule } from './food.module';
+import { OrderModule } from './order.module';
 
 
 @Module({
@@ -12,6 +13,7 @@ import { FoodModule } from './food.module';
         }),
         FoodModule,
         CategoryModule,
+        OrderModule,
         AccountModule
     ],
     providers:[]
