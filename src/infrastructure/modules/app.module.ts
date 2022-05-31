@@ -8,7 +8,7 @@ import { OrderModule } from './order.module';
 
 @Module({
     imports:[
-        MongooseModule.forRoot("mongodb+srv://aas2001:Password123@cluster0.4awhk.mongodb.net",{
+        MongooseModule.forRoot("mongodb+srv://aas2001:Password123@cluster0.4awhk.mongodb.net/?retryWrites=true&w=majority",{
             dbName: "restaurant"
         }),
         FoodModule,
