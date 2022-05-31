@@ -17,12 +17,6 @@ export class OrderDto {
 
 export class OrderListDetailDto {
     @ApiProperty()
-    public orderDate: Date;
-    @ApiProperty()
-    public orderNo: number;
-    @ApiProperty()
-    public billAmount: number;
-    @ApiProperty()
     public foodId: string;
     @ApiProperty()
     public foodName: string;
@@ -34,15 +28,15 @@ export class OrderListDetailDto {
     public amount: number;
 }
 
-// export class OrderListDto {
-//     @ApiProperty()
-//     public orderDate: Date;
-//     @ApiProperty()
-//     public orderNo: number;
-//     @ApiProperty()
-//     public billAmount: number;
-//     @ApiProperty({ type: OrderListDetailDto, isArray: true })
-//     public orderDetail: OrderListDetailDto[];
+export class OrderListDto {
+    @ApiProperty()
+    public orderDate: Date;
+    @ApiProperty()
+    public orderNo: number;
+    @ApiProperty()
+    public billAmount: number;
+    @ApiProperty({ type: OrderListDetailDto, isArray: true })
+    public orderDetail: OrderListDetailDto[];
 
-// }
+}
 

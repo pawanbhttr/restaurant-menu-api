@@ -18,8 +18,8 @@ export class OrderController {
     }
   
     @Get()
-    @ApiResponse({ type: OrderListDetailDto, isArray: true })
-    async findAll(): Promise<OrderListDetailDto[]> {
+    @ApiResponse({ type: OrderDto, isArray: true })
+    async findAll(): Promise<OrderDto[]> {
         return this.orderService.getOrders();
     }
 }
